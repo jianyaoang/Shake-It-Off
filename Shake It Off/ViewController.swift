@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         createSwipeGestures()
     }
     
+    
+    //MARK: Swipe Gestures
     func createSwipeGestures() {
         
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
@@ -58,6 +60,17 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: Shake
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        
+        if event.subtype == UIEventSubtype.MotionShake {
+            
+            println("Shake it off !")
+            
+        }
+    }
+    
 }
 
 
